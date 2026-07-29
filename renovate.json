@@ -12,5 +12,6 @@
         "digest"
       ]
     }
-  ]
+  ],
+  "automerge": true
 }
