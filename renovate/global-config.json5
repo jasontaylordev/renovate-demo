@@ -1,0 +1,45 @@
+{
+  automerge: false,
+  automergeType: 'pr',
+  ignoreTests: false,
+
+  branchPrefix: 'renovate/',
+  enabledManagers: [
+    'nuget',
+    'github-actions'
+  ],
+
+  labels: [
+    'dependencies'
+  ],
+
+  dependencyDashboard: true,
+
+  packageRules: [
+    {
+      // Do not update the .NET SDK in global.json
+      matchDatasources: [
+        'dotnet-version'
+      ],
+      enabled: false
+    },
+    {
+      // Add a label to NuGet updates
+      matchManagers: [
+        'nuget'
+      ],
+      addLabels: [
+        'NuGet'
+      ]
+    },
+    {
+      // Add a label to GitHub Actions updates
+      matchManagers: [
+        'github-actions'
+      ],
+      addLabels: [
+        'github-actions'
+      ]
+    }
+  ]
+}
